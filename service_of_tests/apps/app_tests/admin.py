@@ -1,3 +1,39 @@
 from django.contrib import admin
+from django.db import models
+from django.forms.widgets import Textarea
 
-# Register your models here.
+from apps.app_tests.models import Choice, Question, TestResult, TestSet
+
+from .forms import BaseChoiceFormset
+
+
+@admin.register(Choice, TestResult)
+class DefaultEventAdmin(admin.ModelAdmin):
+    pass
+
+
+class ChoiceInline(admin.TabularInline):
+    model = Choice
+    formset = BaseChoiceFormset
+    formfield_overrides = {
+        models.CharField: {"widget": Textarea},
+    }
+    extra = 0
+
+
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    inlines = [ChoiceInline]
+    formfield_overrides = {
+        models.CharField: {"widget": Textarea},
+    }
+
+
+@admin.register(TestSet)
+class TestSetAdmin(admin.ModelAdmin):
+    list_display = ("id", "title", "description")
+    list_display_links = (
+        "id",
+        "title",
+    )
+    ordering = ["id"]
