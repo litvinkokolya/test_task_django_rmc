@@ -1,0 +1,54 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+#main-word {
+    text-decoration: none;
+    color: #cccccc;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.auth-nav {
+    display: flex;
+    align-items: center;
+}
+
+.auth-nav p {
+    margin: 0 10px;
+}
+
+.button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+}
+
+.button:hover {
+    background-color: #ddd;
+}
+
+main {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ddd;
+}
