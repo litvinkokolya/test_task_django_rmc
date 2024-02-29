@@ -21,9 +21,7 @@ class LoginUser(LoginView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy(
-            "home"
-        )  # TODO: поменять куда перенаправлять при успешном входе.
+        return reverse_lazy("tests")
 
 
 def logout_user(request):
@@ -39,6 +37,4 @@ class RegisterView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect(
-            "home"
-        )  # TODO: поменять куда перенаправлять при успешном входе.
+        return redirect("tests")
