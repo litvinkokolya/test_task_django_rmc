@@ -2,12 +2,12 @@ from django.contrib import admin
 from django.db import models
 from django.forms.widgets import Textarea
 
-from apps.app_tests.models import Choice, Question, TestResult, TestSet
+from apps.app_tests.models import Choice, Question, TestSet, UserChoice
 
 from .forms import BaseChoiceFormset
 
 
-@admin.register(Choice, TestResult)
+@admin.register(Choice, UserChoice)
 class DefaultEventAdmin(admin.ModelAdmin):
     pass
 

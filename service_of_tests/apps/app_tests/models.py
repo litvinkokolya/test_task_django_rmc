@@ -40,18 +40,7 @@ class Choice(models.Model):
         return self.text
 
 
-class TestResult(models.Model):
-    user = models.ForeignKey(
-        "users.User",
-        on_delete=models.CASCADE,
-        verbose_name="Пользователь",
-    )
-    test_set = models.ForeignKey("TestSet", on_delete=models.CASCADE)
-    result = models.FloatField(verbose_name="Результат (процентов)")
-
-    def __str__(self):
-        return f"{self.user}:{self.test_set}:{self.result}%"
-
-    class Meta:
-        verbose_name = "Результат"
-        verbose_name_plural = "Результаты"
+class UserChoice(models.Model):
+    user = models.ForeignKey("users.User", on_delete=models.CASCADE)
+    question = models.ForeignKey("Question", on_delete=models.CASCADE)
+    choice = models.ForeignKey("Choice", on_delete=models.CASCADE)

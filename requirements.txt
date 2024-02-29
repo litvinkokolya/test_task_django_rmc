@@ -11,6 +11,9 @@ crashtest==0.4.1
 cryptography==41.0.4
 distlib==0.3.7
 Django==5.0.2
+django-environ==0.11.2
+django-filter==23.5
+django-nested-admin==4.0.2
 dulwich==0.21.6
 fastjsonschema==2.18.1
 filelock==3.12.2
@@ -36,12 +39,14 @@ poetry-plugin-export==1.6.0
 ptyprocess==0.7.0
 pycparser==2.21
 pyproject_hooks==1.0.0
+python-monkey-business==1.0.0
 rapidfuzz==3.5.2
 requests==2.31.0
 requests-toolbelt==1.0.0
 ruff==0.2.2
 SecretStorage==3.3.3
 shellingham==1.5.3
+six==1.16.0
 sqlparse==0.4.4
 tomlkit==0.12.1
 trove-classifiers==2023.9.19
