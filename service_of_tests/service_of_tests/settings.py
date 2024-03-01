@@ -21,7 +21,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "nested_admin",
     "apps.app_tests.apps.AppTestsConfig",
     "apps.users.apps.UsersConfig",
 ]
@@ -57,12 +56,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "service_of_tests.wsgi.application"
 
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+DATABASES = {"default": env.db_url("SQLITE_URL")}
 
 
 AUTH_PASSWORD_VALIDATORS = [

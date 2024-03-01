@@ -1,8 +1,8 @@
-from django.db.models import Count
-from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from .models import TestSet, Question, Choice, UserChoice
+from django.views.generic import ListView, TemplateView
+
+from .models import Choice, Question, TestSet, UserChoice
 
 
 class TestSetsListsView(LoginRequiredMixin, ListView):
