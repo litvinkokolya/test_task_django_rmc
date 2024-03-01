@@ -44,3 +44,10 @@ class UserChoice(models.Model):
     user = models.ForeignKey("users.User", on_delete=models.CASCADE)
     question = models.ForeignKey("Question", on_delete=models.CASCADE)
     choice = models.ForeignKey("Choice", on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = "Ответ пользователя"
+        verbose_name_plural = "Ответы пользователей"
+
+    def __str__(self):
+        return self.user, self.question, self.choice

@@ -8,7 +8,7 @@ from .forms import BaseChoiceFormset
 
 
 @admin.register(Choice, UserChoice)
-class DefaultEventAdmin(admin.ModelAdmin):
+class DefaultModelAdmin(admin.ModelAdmin):
     pass
 
 

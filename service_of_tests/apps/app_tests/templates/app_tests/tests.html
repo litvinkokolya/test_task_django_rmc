@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for test_set in test_sets %}
-<a href="{% url 'test' pk=test_set.id %}">{{ test_set.title }}</a>
+<a href="{% url 'detail-test' pk=test_set.id %}">{{ test_set.title }}</a>
 {% endfor %}
 {% endblock %}
